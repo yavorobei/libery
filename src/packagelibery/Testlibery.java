@@ -2,23 +2,22 @@ package packagelibery;
 
 /**
  * Created by Dell-user on 5/23/16.
- * <p/>
- * <p/>
+ *
  * Предметная область - Библиотека
  * Основные классы: Библиотека, Книга, Читатель
- * <p/>
+ *
  * Написать программу позволяющую узнать следующую информацию:
- * 1) посмотреть список читателей
- * 2) посмотреть список доступных книг
- * 3) добавить книгу в библиотеку
- * 4) добавить читателя в список читателей
+ * 1) посмотреть список читателей +
+ * 2) посмотреть список доступных книг +
+ * 3) добавить книгу в библиотеку +
+ * 4) добавить читателя в список читателей +
  * 5) выдать книгу читателю (если книга есть в наличии).
  * Читателю запрещается брать больше 3-х книг.
  * 6) посмотреть список книг, которые находятся у читателей
  * 7) посмотреть список книг, которые находятся у конкретного читателя
  * 8) добавить читателя в черный список (ему нельзя выдавать книги)
- * 9) посмотреть книги конкретного автора
- * 10) посмотреть книги конкретного года
+ * 9) посмотреть книги конкретного автора +
+ * 10) посмотреть книги конкретного года +
  */
 public class Testlibery {
     public static void main(String[] args) {
@@ -29,23 +28,31 @@ public class Testlibery {
 
 
         MyBook book = new MyBook("Kathy Sierra, Bert Bates", "Head First Java", 2014);
-        MyBook book1 = new MyBook("Kathy Sierra, Bert Bates", "Head First Java", 2015);
+        MyBook book1 = new MyBook("Kathy Sierra, Bert Bates", "Head First HTML", 2014);
+        MyBook book2 = new MyBook("Kathy Tary", "Head First C++", 2014);
+        MyBook book3 = new MyBook("Kathy Sierra", "Head First C#", 2014);
+        MyBook book4 = new MyBook("Kathy Sierra, Bert Bates", "Head First Java", 2015);
 
         Libery itLibery = new Libery("IT-Libery");
 
         itLibery.addBook(book);
         itLibery.addBook(book1);
+        itLibery.addBook(book2);
+        itLibery.addBook(book3);
+        itLibery.addBook(book4);
 
         itLibery.addReader(reader);
         itLibery.addReader(reader1);
         itLibery.addReader(reader2);
 
-        System.out.println("\n List books:");
+
         itLibery.showListOfBooks(itLibery.getBooks());
 
-        System.out.println("\n List readers:");
         itLibery.showListOfReaders(itLibery.getReaders());
 
+        itLibery.findBookOfOneYear(itLibery.getBooks(), 2014);
+
+        itLibery.findBookSingleAuthor(itLibery.getBooks(), "Kathy Sierra, Bert Bates");
 
     }
 }

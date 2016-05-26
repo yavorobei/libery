@@ -62,14 +62,44 @@ public class Libery {
     }
 
     public void showListOfReaders(ArrayList <MyReader> readers){
+        System.out.println("\n|List readers:");
+        System.out.println("--------------");
         for(MyReader item : readers){
             System.out.println(item);
         }
     }
 
     public void showListOfBooks(ArrayList <MyBook> books){
+        System.out.println("\n|List books:");
+        System.out.println("-----------");
         for(MyBook item : books){
             System.out.println(item);
+        }
+    }
+    /*можно ли давать книгу для читателя*/
+    public boolean checkUserQuantityBook(MyReader reader){
+        if(reader.getCountBook()<=3) return true;
+        return false;
+    }
+
+    //поиск книг одного года выпуска
+    public void findBookOfOneYear(ArrayList <MyBook> books, int year){
+        System.out.println("\n|Books of the one year:");
+        System.out.println("-----------------------");
+        for(MyBook item : books){
+            if(item.getPrintYear()==year) {
+                System.out.println(item);
+            }
+        }
+    }
+
+    public void findBookSingleAuthor(ArrayList <MyBook> books, String author){
+        System.out.println("\n|Books single author:");
+        System.out.println("---------------------");
+        for(MyBook item : books){
+            if(item.getOuthors().equals(author)) {
+                System.out.println(item);
+            }
         }
     }
 

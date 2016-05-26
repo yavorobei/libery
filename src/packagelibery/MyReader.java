@@ -81,6 +81,10 @@ public class MyReader {
         this.adress = adress;
     }
 
+    public int getCountBook() { return countBook; }
+
+    public void setCountBook(int countBook) {this.countBook = countBook; }
+
     @Override
     public String toString() {
         return "MyReader{" +

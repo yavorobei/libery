@@ -7,6 +7,7 @@ public class MyBook {
     private String outhors;
     private String name;
     private int printYear;
+    private boolean statusBoock=true;
 
     public MyBook(String outhors, String name, int printYear) {
         this.outhors = outhors;
@@ -38,12 +39,22 @@ public class MyBook {
         this.printYear = printYear;
     }
 
+    public boolean isStatusBoock() {
+        return statusBoock;
+    }
+
+    public void setStatusBoock(boolean statusBoock) {
+        this.statusBoock = statusBoock;
+    }
+
+
     @Override
     public String toString() {
         return "MyBook{" +
                 "outhors='" + outhors + '\'' +
                 ", name='" + name + '\'' +
                 ", printYear=" + printYear +
+                ", statusBoock=" + statusBoock +
                 '}';
     }
 }
