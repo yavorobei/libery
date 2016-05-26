@@ -21,6 +21,9 @@ public class Libery {
 
     }
 
+    public ArrayList<MyBook> getBooks() {
+        return books;
+    }
 
     public boolean addReader(MyReader reader){
         if (reader == null || readers.contains(reader)) return false;
@@ -52,6 +55,18 @@ public class Libery {
 
     public boolean takeBook(MyBook book, MyReader reader){
         return false;
+    }
+
+    public void showListOfReaders(ArrayList <MyReader> readers){
+        for(MyReader item : readers){
+            System.out.println(item);
+        }
+    }
+
+    public void showListOfBooks(ArrayList <MyBook> books){
+        for(MyBook item : books){
+            System.out.println(item);
+        }
     }
 
 }

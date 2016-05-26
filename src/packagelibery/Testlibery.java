@@ -29,10 +29,15 @@ public class Testlibery {
 
        System.out.println(reader);
 
-       MyBook book = new MyBook("BY", "a1", 1999);
-       Libery libery1 = new Libery("SuperLibery");
+       MyBook book = new MyBook("Kathy Sierra, Bert Bates", "Head First Java", 2014);
+       MyBook book1 = new MyBook("Kathy Sierra, Bert Bates", "Head First Java", 2015);
 
-       libery1.addBook(book);
+        Libery itLibery = new Libery("IT-Libery");
+
+       itLibery.addBook(book);
+       itLibery.addBook(book1);
+
+       itLibery.showListOfBooks(itLibery.getBooks());
 
     }
 }
