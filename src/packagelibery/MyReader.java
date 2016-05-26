@@ -1,7 +1,8 @@
-package libery;
+package packagelibery;
 
-import java.time.LocalDate;
+//import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * Created by Dell-user on 5/23/16.
@@ -10,7 +11,7 @@ public class MyReader {
     private String name;
     private String surname;
     private int id;
-    private LocalDate birthday;
+    private Date birthday;
     private Adress adress;
     private boolean isBlackList;
     private ArrayList<MyBook> books;
@@ -32,7 +33,7 @@ public class MyReader {
         this.surname = surname;
     }
 
-    public MyReader(String name, String surname, int id, LocalDate birthday, Adress adress) {
+    public MyReader(String name, String surname, int id, Date birthday, Adress adress) {
         this.name = name;
         this.surname = surname;
         this.id = id;
@@ -64,11 +65,11 @@ public class MyReader {
         this.id = id;
     }
 
-    public LocalDate getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(LocalDate birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 
