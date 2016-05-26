@@ -25,6 +25,10 @@ public class Libery {
         return books;
     }
 
+    public ArrayList<MyReader> getReaders() {
+        return readers;
+    }
+
     public boolean addReader(MyReader reader){
         if (reader == null || readers.contains(reader)) return false;
         return  readers.add(reader);
