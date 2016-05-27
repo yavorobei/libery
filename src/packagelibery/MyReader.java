@@ -14,11 +14,14 @@ public class MyReader {
     private Date birthday;
     private Adress adress;
     private boolean isBlackList;
-    private ArrayList<MyBook> books;
-    private int countBook;
+    public ArrayList<MyBook> readerBooks = new ArrayList<MyBook>();
+    private int countUserBook;
+
+
+
 
     public boolean isBlackList() {
-        return isBlackList;
+       return isBlackList;
     }
 
     public void setBlackList(boolean isBlackList) {
@@ -81,9 +84,10 @@ public class MyReader {
         this.adress = adress;
     }
 
-    public int getCountBook() { return countBook; }
+    public int getCountBook() { return countUserBook; }
 
-    public void setCountBook(int countBook) {this.countBook = countBook; }
+    public void setCountBook(int countBook) {this.countUserBook = countBook; }
+
 
     @Override
     public String toString() {
@@ -93,6 +97,9 @@ public class MyReader {
                 ", id=" + id +
                 ", birthday=" + birthday +
                 ", adress=" + adress +
+                ", isBlackList=" + isBlackList +
+               // ", readerBooks=" + readerBooks +
+                ", countUserBook=" + countUserBook +
                 '}';
     }
 }

@@ -9,6 +9,7 @@ public class Libery {
     private ArrayList <MyBook> books;
     private ArrayList<MyReader> readers;
     private String nameLibery;
+    private int count;
 
     public Libery(String nameLibery) {
         this.nameLibery = nameLibery;
@@ -52,8 +53,16 @@ public class Libery {
     }
 
     public boolean giveBook(MyBook book, MyReader reader) {
-        if (reader.isBlackList()) return false;
-        //if (reader)
+        if (reader.isBlackList()) {
+            System.out.println(reader + "==> this user in black list");
+            return false;
+        }
+        if(reader.getCountBook()<3 && !book.getBusyBook()) {
+            reader.setCountBook(++count);
+            reader.readerBooks.add(book);
+            book.setBusyBook(true);
+            return true;
+        }
         return false;
     }
 
@@ -76,10 +85,15 @@ public class Libery {
             System.out.println(item);
         }
     }
-    /*можно ли давать книгу для читателя*/
-    public boolean checkUserQuantityBook(MyReader reader){
-        if(reader.getCountBook()<=3) return true;
-        return false;
+
+    public void showListOfBooksParticularUser(MyReader reader){
+        System.out.println("\n|List of books particular reader:");
+        System.out.println("---------------------------------");
+
+        for(MyBook item : reader.readerBooks){
+            System.out.println(item);
+        }
+
     }
 
     //поиск книг одного года выпуска
@@ -102,5 +116,16 @@ public class Libery {
             }
         }
     }
+
+    public void showBusyBook(ArrayList <MyBook> books){
+        System.out.println("\n|List busy books:");
+        System.out.println("-----------------");
+        for(MyBook item : books){
+            if(item.getBusyBook()==true) {
+                System.out.println(item);
+            }
+        }
+    }
+
 
 }

@@ -11,10 +11,10 @@ package packagelibery;
  * 2) посмотреть список доступных книг +
  * 3) добавить книгу в библиотеку +
  * 4) добавить читателя в список читателей +
- * 5) выдать книгу читателю (если книга есть в наличии).
+ * 5) выдать книгу читателю (если книга есть в наличии). +
  * Читателю запрещается брать больше 3-х книг.
- * 6) посмотреть список книг, которые находятся у читателей
- * 7) посмотреть список книг, которые находятся у конкретного читателя
+ * 6) посмотреть список книг, которые находятся у читателей +
+ * 7) посмотреть список книг, которые находятся у конкретного читателя +
  * 8) добавить читателя в черный список (ему нельзя выдавать книги)
  * 9) посмотреть книги конкретного автора +
  * 10) посмотреть книги конкретного года +
@@ -48,11 +48,24 @@ public class Testlibery {
 
         itLibery.showListOfBooks(itLibery.getBooks());
 
-        itLibery.showListOfReaders(itLibery.getReaders());
-
         itLibery.findBookOfOneYear(itLibery.getBooks(), 2014);
 
         itLibery.findBookSingleAuthor(itLibery.getBooks(), "Kathy Sierra, Bert Bates");
+
+        itLibery.giveBook(book, reader);
+        itLibery.giveBook(book1, reader);
+        itLibery.giveBook(book2, reader);
+        itLibery.giveBook(book3, reader);
+
+        itLibery.showListOfReaders(itLibery.getReaders());
+
+        itLibery.showListOfBooksParticularUser(reader);
+
+        itLibery.showBusyBook(itLibery.getBooks());
+
+        itLibery.addReaderInBlackList(reader1);
+
+        itLibery.giveBook(book, reader1);
 
     }
 }

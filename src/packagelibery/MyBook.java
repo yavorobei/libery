@@ -7,12 +7,20 @@ public class MyBook {
     private String outhors;
     private String name;
     private int printYear;
-    private boolean statusBoock=true;
+    private boolean busyBook;
 
     public MyBook(String outhors, String name, int printYear) {
         this.outhors = outhors;
         this.name = name;
         this.printYear = printYear;
+    }
+
+    public boolean getBusyBook() {
+        return busyBook;
+    }
+
+    public void setBusyBook(boolean busyBook) {
+        this.busyBook = busyBook;
     }
 
     public String getOuthors() {
@@ -39,13 +47,7 @@ public class MyBook {
         this.printYear = printYear;
     }
 
-    public boolean isStatusBoock() {
-        return statusBoock;
-    }
 
-    public void setStatusBoock(boolean statusBoock) {
-        this.statusBoock = statusBoock;
-    }
 
 
     @Override
@@ -54,7 +56,7 @@ public class MyBook {
                 "outhors='" + outhors + '\'' +
                 ", name='" + name + '\'' +
                 ", printYear=" + printYear +
-                ", statusBoock=" + statusBoock +
+                ", statusBoock=" + busyBook +
                 '}';
     }
 }
