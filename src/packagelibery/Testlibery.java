@@ -27,7 +27,6 @@ public class Testlibery {
         Reader reader1 = new Reader("Bob", "Red");
         Reader reader2 = new Reader("Dean", "Martin");
 
-
         Book book = new Book("Kathy Sierra, Bert Bates", "Head First Java", 2014);
         Book book1 = new Book("Kathy Sierra, Bert Bates", "Head First HTML", 2014);
         Book book2 = new Book("Kathy Tary", "Head First C++", 2014);

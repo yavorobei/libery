@@ -39,7 +39,7 @@ public class Library {
     }
 
     public boolean addReaderInBlackList(Reader reader) {
-//        todo check null
+        if(reader==null) return false;
         reader.setBanned(true);
         return reader.isBanned();
     }
@@ -98,15 +98,14 @@ public class Library {
     }
 
     public void showListOfBooksParticularUser(Reader reader) {
-        //        todo check null
+        if(reader!=null){
+            System.out.println("\n|List of books particular reader:");
+            System.out.println("---------------------------------");
 
-        System.out.println("\n|List of books particular reader:");
-        System.out.println("---------------------------------");
-
-        for (Book item : reader.readerBooks) {
-            System.out.println(item);
-        }
-
+            for (Book item : reader.readerBooks) {
+                System.out.println(item);
+            }
+        } else System.out.println("we don't have this reader");
     }
 
     //поиск книг одного года выпуска
@@ -145,6 +144,4 @@ public class Library {
             }
         }
     }
-
-
 }
