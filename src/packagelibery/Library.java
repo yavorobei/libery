@@ -19,7 +19,7 @@ public class Library {
     }
 
     public boolean addBook(Book book) {
-//        todo increment bookCount
+        count++;
         return book != null && books.add(book);
 
     }
@@ -51,11 +51,17 @@ public class Library {
     public boolean deleteBook(Book book) {
 
         //        todo
+        count--;
         return false;
     }
 
     public boolean deleteReader(Reader reader) {
-
+        if(reader==null) return false;
+        for(int i=0; i<readers.size(); i++){
+            if(reader.equals(readers[i])){
+                readers.remove(i);
+            }
+        }
         //        todo
         return false;
     }
