@@ -1,5 +1,4 @@
 .idea
-libery.iml
-*.idea
-*.rar
-*.zip
+*.iml
+out/
+*.md

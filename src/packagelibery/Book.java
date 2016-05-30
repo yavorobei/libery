@@ -3,32 +3,35 @@ package packagelibery;
 /**
  * Created by Dell-user on 5/23/16.
  */
-public class MyBook {
-    private String outhors;
+public class Book {
+//   todo class Author
+    private String author;
     private String name;
+//    todo LocalDate
     private int printYear;
-    private boolean busyBook;
+//    todo also create field count
+    private boolean isTaken;
 
-    public MyBook(String outhors, String name, int printYear) {
-        this.outhors = outhors;
+    public Book(String author, String name, int printYear) {
+        this.author = author;
         this.name = name;
         this.printYear = printYear;
     }
 
-    public boolean getBusyBook() {
-        return busyBook;
+    public boolean getTaken() {
+        return isTaken;
     }
 
-    public void setBusyBook(boolean busyBook) {
-        this.busyBook = busyBook;
+    public void setTaken(boolean taken) {
+        this.isTaken = taken;
     }
 
-    public String getOuthors() {
-        return outhors;
+    public String getAuthor() {
+        return author;
     }
 
-    public void setOuthors(String outhors) {
-        this.outhors = outhors;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public String getName() {
@@ -48,15 +51,15 @@ public class MyBook {
     }
 
 
-
+//todo equals
 
     @Override
     public String toString() {
-        return "MyBook{" +
-                "outhors='" + outhors + '\'' +
+        return "Book{" +
+                "author='" + author + '\'' +
                 ", name='" + name + '\'' +
                 ", printYear=" + printYear +
-                ", statusBoock=" + busyBook +
+                ", statusBoock=" + isTaken +
                 '}';
     }
 }

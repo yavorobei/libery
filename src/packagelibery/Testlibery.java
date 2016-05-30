@@ -22,50 +22,50 @@ package packagelibery;
 public class Testlibery {
     public static void main(String[] args) {
 
-        MyReader reader = new MyReader("Ray", "Last");
-        MyReader reader1 = new MyReader("Bob", "Red");
-        MyReader reader2 = new MyReader("Dean", "Martin");
+        Reader reader = new Reader("Ray", "Last");
+        Reader reader1 = new Reader("Bob", "Red");
+        Reader reader2 = new Reader("Dean", "Martin");
 
 
-        MyBook book = new MyBook("Kathy Sierra, Bert Bates", "Head First Java", 2014);
-        MyBook book1 = new MyBook("Kathy Sierra, Bert Bates", "Head First HTML", 2014);
-        MyBook book2 = new MyBook("Kathy Tary", "Head First C++", 2014);
-        MyBook book3 = new MyBook("Kathy Sierra", "Head First C#", 2014);
-        MyBook book4 = new MyBook("Kathy Sierra, Bert Bates", "Head First Java", 2015);
+        Book book = new Book("Kathy Sierra, Bert Bates", "Head First Java", 2014);
+        Book book1 = new Book("Kathy Sierra, Bert Bates", "Head First HTML", 2014);
+        Book book2 = new Book("Kathy Tary", "Head First C++", 2014);
+        Book book3 = new Book("Kathy Sierra", "Head First C#", 2014);
+        Book book4 = new Book("Kathy Sierra, Bert Bates", "Head First Java", 2015);
 
-        Libery itLibery = new Libery("IT-Libery");
+        Library itLibrary = new Library("IT-Library");
 
-        itLibery.addBook(book);
-        itLibery.addBook(book1);
-        itLibery.addBook(book2);
-        itLibery.addBook(book3);
-        itLibery.addBook(book4);
+        itLibrary.addBook(book);
+        itLibrary.addBook(book1);
+        itLibrary.addBook(book2);
+        itLibrary.addBook(book3);
+        itLibrary.addBook(book4);
 
-        itLibery.addReader(reader);
-        itLibery.addReader(reader1);
-        itLibery.addReader(reader2);
+        itLibrary.addReader(reader);
+        itLibrary.addReader(reader1);
+        itLibrary.addReader(reader2);
 
 
-        itLibery.showListOfBooks(itLibery.getBooks());
+        itLibrary.showListOfBooks(itLibrary.getBooks());
 
-        itLibery.findBookOfOneYear(itLibery.getBooks(), 2014);
+        itLibrary.findBookOfOneYear(itLibrary.getBooks(), 2014);
 
-        itLibery.findBookSingleAuthor(itLibery.getBooks(), "Kathy Sierra, Bert Bates");
+        itLibrary.findBookSingleAuthor(itLibrary.getBooks(), "Kathy Sierra, Bert Bates");
 
-        itLibery.giveBook(book, reader);
-        itLibery.giveBook(book1, reader);
-        itLibery.giveBook(book2, reader);
-        itLibery.giveBook(book3, reader);
+        itLibrary.giveBook(book, reader);
+        itLibrary.giveBook(book1, reader);
+        itLibrary.giveBook(book2, reader);
+        itLibrary.giveBook(book3, reader);
 
-        itLibery.showListOfReaders(itLibery.getReaders());
+        itLibrary.showListOfReaders(itLibrary.getReaders());
 
-        itLibery.showListOfBooksParticularUser(reader);
+        itLibrary.showListOfBooksParticularUser(reader);
 
-        itLibery.showBusyBook(itLibery.getBooks());
+        itLibrary.showBusyBook(itLibrary.getBooks());
 
-        itLibery.addReaderInBlackList(reader1);
+        itLibrary.addReaderInBlackList(reader1);
 
-        itLibery.giveBook(book, reader1);
+        itLibrary.giveBook(book, reader1);
 
     }
 }

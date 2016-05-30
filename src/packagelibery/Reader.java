@@ -7,42 +7,43 @@ import java.util.Date;
 /**
  * Created by Dell-user on 5/23/16.
  */
-public class MyReader {
+public class Reader {
     private String name;
     private String surname;
     private int id;
+//    todo LocalDate
     private Date birthday;
-    private Adress adress;
-    private boolean isBlackList;
-    public ArrayList<MyBook> readerBooks = new ArrayList<MyBook>();
+    private Address address;
+    private boolean isBanned;
+    public ArrayList<Book> readerBooks = new ArrayList<Book>();
     private int countUserBook;
 
 
-
-
-    public boolean isBlackList() {
-       return isBlackList;
+    public boolean isBanned() {
+       return isBanned;
     }
 
-    public void setBlackList(boolean isBlackList) {
-        this.isBlackList = isBlackList;
+    public void setBanned(boolean isBlackList) {
+        this.isBanned = isBlackList;
     }
 
-    public MyReader() {
+    public Reader() {
     }
 
-    public MyReader(String name, String surname) {
+    public Reader(String name, String surname) {
         this.name = name;
         this.surname = surname;
     }
 
-    public MyReader(String name, String surname, int id, Date birthday, Adress adress) {
+    public Reader(String name, String surname, int id, Date birthday, Address address) {
         this.name = name;
         this.surname = surname;
         this.id = id;
         this.birthday = birthday;
-        this.adress = adress;
+        this.address = address;
     }
+
+//    todo validation in setters
 
     public String getName() {
         return name;
@@ -76,12 +77,12 @@ public class MyReader {
         this.birthday = birthday;
     }
 
-    public Adress getAdress() {
-        return adress;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAdress(Adress adress) {
-        this.adress = adress;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public int getCountBook() { return countUserBook; }
@@ -89,15 +90,17 @@ public class MyReader {
     public void setCountBook(int countBook) {this.countUserBook = countBook; }
 
 
+//    todo equals
+
     @Override
     public String toString() {
-        return "MyReader{" +
+        return "Reader{" +
                 "name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
                 ", id=" + id +
                 ", birthday=" + birthday +
-                ", adress=" + adress +
-                ", isBlackList=" + isBlackList +
+                ", address=" + address +
+                ", isBanned=" + isBanned +
                // ", readerBooks=" + readerBooks +
                 ", countUserBook=" + countUserBook +
                 '}';
