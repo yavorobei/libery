@@ -18,7 +18,7 @@ package packagelibery;
  * 8) добавить читателя в черный список (ему нельзя выдавать книги) +
  * 9) посмотреть книги конкретного автора +
  * 10) посмотреть книги конкретного года +
- */
+
 public class Testlibery {
 
     public static void main(String[] args) {
@@ -69,3 +69,4 @@ public class Testlibery {
 
     }
 }
+*/
