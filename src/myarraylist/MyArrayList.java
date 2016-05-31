@@ -1,13 +1,12 @@
 package myarraylist;
 
-import java.util.Objects;
 
 /**
  * Created by user on 30.05.2016.
  *
  *
  * add(Object) +
- * add(index, Object)
+ * add(index, Object) +
  * get(index)
  * remove(index)
  * remove(index, Object)
@@ -21,7 +20,7 @@ import java.util.Objects;
 public class MyArrayList {
 
     private int size;
-    private Object[] testArray = new Object[5];
+    private Object[] testArray = new Object[1];
 
     public Object[] getTestArray() {
         return testArray;
@@ -48,7 +47,7 @@ public class MyArrayList {
     }
 
     public void resizeArray(){
-        Object[] resizeArray = new Object[size*2];
+        Object[] resizeArray = new Object[size+1];
         for (int i = 0; i < testArray.length; i++) {
             resizeArray[i] = testArray[i];
         }
@@ -66,8 +65,13 @@ public class MyArrayList {
       скопировать оставшиюся часть масивы в новый */
 
     public void add(int index, Object obj){
-        
-        size++;
-    }
+        Object[] tempArray = new Object[size+1];
 
+        System.arraycopy(testArray, 0, tempArray, 0, index);
+        tempArray[index] = obj;
+
+        System.arraycopy(testArray, index, tempArray, ++index, testArray.length-(--index));
+
+        testArray=tempArray;
+    }
 }

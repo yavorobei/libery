@@ -1,7 +1,5 @@
 package myarraylist;
 
-import java.util.ArrayList;
-
 /**
  * Created by user on 30.05.2016.
  */
@@ -18,14 +16,14 @@ public class TestMyArrayList {
         testArrays.add("test add3");
         testArrays.add("test add4");
         testArrays.add("test add5");
-        testArrays.add("test add6");
-        testArrays.add("test add7");
-        testArrays.add("test add8");
-        testArrays.add("test add9");
-        testArrays.add("test add10");
+
         testArrays.showArray(testArrays.getTestArray());
 
-        System.out.println("size ==> " + testArrays.getSize());
+        System.out.println("size ==> " + testArrays.getSize() + "\n");
+
+        testArrays.add(6,"-- insert 777 --");
+
+        testArrays.showArray(testArrays.getTestArray());
 
 
     }
