@@ -8,7 +8,7 @@ public class TestMyArrayList {
 
         MyArrayList testArrays = new MyArrayList();
 
-        System.out.println(testArrays.size(testArrays.getTestArray()));
+        //System.out.println(testArrays.size(testArrays.getTestArray()));
 
         testArrays.add("test add0");
         testArrays.add("test add1");
@@ -19,12 +19,19 @@ public class TestMyArrayList {
 
         testArrays.showArray(testArrays.getTestArray());
 
-        System.out.println("size ==> " + testArrays.getSize() + "\n");
+        System.out.println("\nsize ==> " + testArrays.getSize() + "\n");
 
-        testArrays.add(6,"-- insert 777 --");
+        testArrays.add(1,"-- insert 777 --");
 
         testArrays.showArray(testArrays.getTestArray());
 
 
+        System.out.println("\nget element ==> " + testArrays.get(0) + "\n");
+
+        System.out.println("Array after remove element: ");
+        testArrays.remove(4);
+
+        System.out.println("--------------------------- ");
+        testArrays.showArray(testArrays.getTestArray());
     }
 }

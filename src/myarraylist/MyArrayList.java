@@ -7,7 +7,7 @@ package myarraylist;
  *
  * add(Object) +
  * add(index, Object) +
- * get(index)
+ * get(index) +
  * remove(index)
  * remove(index, Object)
  * set(index, Object)
@@ -60,10 +60,6 @@ public class MyArrayList {
         }
     }
 
-    /*скопировать все елементы до указаного в новый масив
-      скопировать указанный елемент в новый масив
-      скопировать оставшиюся часть масивы в новый */
-
     public void add(int index, Object obj){
         Object[] tempArray = new Object[size+1];
 
@@ -71,6 +67,21 @@ public class MyArrayList {
         tempArray[index] = obj;
 
         System.arraycopy(testArray, index, tempArray, ++index, testArray.length-(--index));
+
+        testArray=tempArray;
+    }
+
+    public Object get(int index){
+       // if(index >= size || index < 0) return false; IndexOutOfBoundsException(outOfBoundsMsg(index));
+        return testArray[index];
+    }
+
+
+    public void remove(int index){
+        Object[] tempArray = new Object[testArray.length-1];
+
+        System.arraycopy(testArray, 0, tempArray, 0, index);
+        System.arraycopy(testArray, ++index, tempArray, --index, tempArray.length-index);
 
         testArray=tempArray;
     }
