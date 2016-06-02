@@ -17,6 +17,7 @@ public class Reader {
     private boolean isBanned;
     public ArrayList<Book> readerBooks = new ArrayList<Book>();
     private int countUserBook;
+    private Gender gender;
 
 
     public boolean isBanned() {
@@ -35,7 +36,8 @@ public class Reader {
         this.surname = surname;
     }
 
-    public Reader(String name, String surname, int id, Date birthday, Address address) {
+    public Reader(String name, String surname, int id, Date birthday, Address address, Gender gender) {
+        this.gender = gender;
         this.name = name;
         this.surname = surname;
         this.id = id;

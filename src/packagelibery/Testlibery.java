@@ -23,13 +23,15 @@ public class Testlibery {
 
     public static void main(String[] args) {
 
+        Gender g = Gender.FEMALE;
+
         Reader reader = new Reader("Ray", "Last");
         Reader reader1 = new Reader("Bob", "Red");
         Reader reader2 = new Reader("Dean", "Martin");
 
-        Book book = new Book("Kathy Sierra, Bert Bates", "Head First Java", 2014);
-        Book book1 = new Book("Kathy Sierra, Bert Bates", "Head First HTML", 2014);
-        Book book2 = new Book("Kathy Tary", "Head First C++", 2014);
+        Book book = new Book("Kathy Sierra, Bert Bates", "Head First Java", 2010);
+        Book book1 = new Book("Kathy Sierra, Bert Bates", "Head First HTML", 2011);
+        Book book2 = new Book("Kathy Tary", "Head First C++", 2009);
         Book book3 = new Book("Kathy Sierra", "Head First C#", 2014);
         Book book4 = new Book("Kathy Sierra, Bert Bates", "Head First Java", 2015);
 
@@ -45,8 +47,8 @@ public class Testlibery {
         itLibrary.addReader(reader1);
         itLibrary.addReader(reader2);
 
-
-        itLibrary.showListOfBooks(itLibrary.getBooks());
+        System.out.print("Books -> ");
+        itLibrary.showListOfBooks();
 
         itLibrary.findBookOfOneYear(itLibrary.getBooks(), 2014);
 
@@ -57,7 +59,7 @@ public class Testlibery {
         itLibrary.giveBook(book2, reader);
         itLibrary.giveBook(book3, reader);
 
-        itLibrary.showListOfReaders(itLibrary.getReaders());
+        itLibrary.showListOfReaders();
 
         itLibrary.showListOfBooksParticularUser(reader);
 

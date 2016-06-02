@@ -3,7 +3,7 @@ package packagelibery;
 /**
  * Created by Dell-user on 5/23/16.
  */
-public class Book {
+public class Book implements Comparable<Book>{
 //   todo class Author
     private String author;
     private String name;
@@ -53,6 +53,15 @@ public class Book {
 
 //todo equals
 
+    public boolean equals(Object o){
+// ckeck reference
+// check instance
+        // casting
+        // check fields
+
+        return false;
+    }
+
     @Override
     public String toString() {
         return "Book{" +
@@ -61,5 +70,10 @@ public class Book {
                 ", printYear=" + printYear +
                 ", statusBoock=" + isTaken +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Book o) {
+        return name.compareTo(o.name);
     }
 }

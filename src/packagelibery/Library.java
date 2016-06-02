@@ -1,6 +1,7 @@
 package packagelibery;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by Dell-user on 5/23/16.
@@ -58,7 +59,7 @@ public class Library {
     public boolean deleteReader(Reader reader) {
         if(reader==null) return false;
         for(int i=0; i<readers.size(); i++){
-            if(reader.equals(readers[i])){
+            if(reader.equals(readers.get(i))){
                 readers.remove(i);
             }
         }
@@ -84,7 +85,7 @@ public class Library {
         return false;
     }
 
-    public void showListOfReaders(ArrayList<Reader> readers) {
+    public void showListOfReaders() {
         //        todo wark with inner array
 
         System.out.println("\n|List readers:");
@@ -94,13 +95,15 @@ public class Library {
         }
     }
 
-    public void showListOfBooks(ArrayList<Book> books) {
+    public void showListOfBooks() {
 //        todo wark with inner array
         System.out.println("\n|List books:");
         System.out.println("-----------");
+        Collections.sort(books, new CompByYear());
         for (Book item : books) {
-            System.out.println(item);
+            System.out.print(item);
         }
+        System.out.println();
     }
 
     public void showListOfBooksParticularUser(Reader reader) {
