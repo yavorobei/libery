@@ -8,11 +8,11 @@ package myarraylist;
  * add(Object) +
  * add(index, Object) +
  * get(index) +
- * remove(index)
- * remove(index, Object)
- * set(index, Object)
- * clear()
- * contains(Object)
+ * remove(index) +
+ * remove(index, Object) +
+ * set(index, Object) +
+ * clear() +
+ * contains(Object)+
  * size() +
  *
  *
@@ -72,10 +72,8 @@ public class MyArrayList {
     }
 
     public Object get(int index){
-       // if(index >= size || index < 0) return false; IndexOutOfBoundsException(outOfBoundsMsg(index));
         return testArray[index];
     }
-
 
     public void remove(int index){
         Object[] tempArray = new Object[testArray.length-1];
@@ -84,5 +82,34 @@ public class MyArrayList {
         System.arraycopy(testArray, ++index, tempArray, --index, tempArray.length-index);
 
         testArray=tempArray;
+    }
+
+    public void remove(int index, Object obj){
+        if(testArray[index].equals(obj)){
+            Object[] tempArray = new Object[testArray.length-1];
+
+            System.arraycopy(testArray, 0, tempArray, 0, index);
+            System.arraycopy(testArray, ++index, tempArray, --index, tempArray.length-index);
+
+            testArray=tempArray;
+        }
+    }
+
+    public void set(int index, Object obj){
+        testArray[index] = obj;
+    }
+
+    public void clear(){
+        for(int i=0; i<testArray.length; i++){
+            testArray[i] = null;
+        }
+    }
+
+    public boolean contains(Object obj){
+        if(obj==null) return false;
+            for (int i = 0; i < testArray.length; i++){
+               if(testArray[i].equals(obj)) return true;
+            }
+        return false;
     }
 }

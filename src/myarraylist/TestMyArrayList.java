@@ -29,9 +29,28 @@ public class TestMyArrayList {
         System.out.println("\nget element ==> " + testArrays.get(0) + "\n");
 
         System.out.println("Array after remove element: ");
-        testArrays.remove(4);
-
         System.out.println("--------------------------- ");
+        testArrays.remove(4);
         testArrays.showArray(testArrays.getTestArray());
+
+        System.out.println("\nArray after remove element by index and value: ");
+        System.out.println("---------------------------------------------- ");
+        testArrays.remove(3, "test add2");
+        testArrays.showArray(testArrays.getTestArray());
+
+        System.out.println("\nArray after set element: ");
+        System.out.println("------------------------ ");
+        testArrays.set(4, "test ---SET---");
+        testArrays.showArray(testArrays.getTestArray());
+
+        System.out.println("\nCheck method contain:");
+        System.out.println("---------------------- ");
+        System.out.println(testArrays.contains("test add4"));
+
+        System.out.println("\nArray after clear: ");
+        System.out.println("------------------- ");
+        testArrays.clear();
+        testArrays.showArray(testArrays.getTestArray());
+
     }
 }
