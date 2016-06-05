@@ -18,21 +18,22 @@ package myarraylist;
 public class MyArrayList {
 
     private int size;
-    private Object[] testArray = new Object[1];
+    private int capacity;
+    private Object[] testArray = new Object[5];
 //    todo create field capacity -> will clean your code
 
 
 //    todo create diferent constructors see ArrayList
 
-
-//    todo return only filled part
+    //++++ todo_ return only filled part
     public Object[] getTestArray() {
-        return testArray;
-    }
+        for (int i = 0; testArray[i]!=null; i++){
+            size++;
+        }
+        Object[] tempArray = new Object[size];
+        System.arraycopy(testArray, 0, tempArray, 0, size);
 
-    //todo don't need it
-    public void setTestArray(Object[] testArray) {
-        this.testArray = testArray;
+        return tempArray;
     }
 
     public int getSize() {
@@ -40,36 +41,42 @@ public class MyArrayList {
     }
 
 
-// todo you must return this AL size not other
-    public int size(Object[] testArray) {
+//+++ todo_ you must return this AL size not other
+    public int size() {
         return testArray.length;
     }
 
     public void add(Object obj) {
-        if (size >= testArray.length) {
+        if (capacity >= testArray.length) {
             resizeArray();
         }
-        testArray[size] = obj;
-        size++;
+        testArray[capacity] = obj;
+        capacity++;
     }
-//todo why public? resize on 1 cell is bad idea
-    public void resizeArray() {
-        Object[] resizeArray = new Object[size + 1];
+//+++  todo_ why public? resize on 1 cell is bad idea
+    private void resizeArray() {
+    //private Object[] resizeArray() {
+        final int RESIZE_COEFFICIENT = capacity*3/2;
+        Object[] resizeArray = new Object[RESIZE_COEFFICIENT];
         for (int i = 0; i < testArray.length; i++) {
             resizeArray[i] = testArray[i];
         }
         testArray = resizeArray;
     }
 
-    public void showArray(Object[] array) {
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
+    public void showArray() {
+        for (int i = 0; i < testArray.length; i++) {
+            System.out.println(testArray[i]);
         }
     }
 
     public void add(int index, Object obj) {
 //        todo use resize (overload it)
-        Object[] tempArray = new Object[size + 1];
+        final int RESIZE_COEFFICIENT = capacity*3/2;
+            if (capacity >= testArray.length) {
+                Object[] tempArray = new Object[RESIZE_COEFFICIENT];
+            }
+        Object[] tempArray = new Object[testArray.length+1];
 
         System.arraycopy(testArray, 0, tempArray, 0, index);
         tempArray[index] = obj;
@@ -82,7 +89,7 @@ public class MyArrayList {
     public Object get(int index) {
         return testArray[index];
     }
-// todo don't create new array
+// !! todo don't create new array
     public void remove(int index) {
         Object[] tempArray = new Object[testArray.length - 1];
 
@@ -93,8 +100,9 @@ public class MyArrayList {
     }
 
     public void remove(int index, Object obj) {
-//        todo can get NullPointerException
-        if (testArray[index].equals(obj)) {
+//       ++ _todo can get NullPointerException
+
+        if (obj.equals(testArray[index])) {
             Object[] tempArray = new Object[testArray.length - 1];
 
             System.arraycopy(testArray, 0, tempArray, 0, index);
@@ -103,23 +111,30 @@ public class MyArrayList {
             testArray = tempArray;
         }
     }
-//  todo not void! macke chackes on Exceptions
-    public void set(int index, Object obj) {
-        testArray[index] = obj;
+//+++  _todo not void! macke chackes on Exceptions
+    public Object set(int index, Object obj) {
+        if (index >= capacity){
+            throw new IndexOutOfBoundsException("Check index, becouse index >= capacity");
+        }
+        return testArray[index] = obj;
     }
+
 
     public void clear() {
 //        todo not all cells have reference i < size
-        for (int i = 0; i < testArray.length; i++) {
+        for (int i = 0; i < size; i++) {
             testArray[i] = null;
         }
+        size = 0;
+
     }
 
     public boolean contains(Object obj) {
         if (obj == null) return false;
-       // todo can get NullPointerException
+
+       //++ _todo can get NullPointerException
         for (int i = 0; i < testArray.length; i++) {
-            if (testArray[i].equals(obj)) return true;
+            if (obj.equals(testArray[i])) return true;
         }
         return false;
     }

@@ -4,42 +4,35 @@ package packagelibery;
  * Created by Dell-user on 5/23/16.
  */
 public class Book implements Comparable<Book>{
-//   todo class Author
-    private String author;
-    private String name;
+    private Author author;
+    private String bookName;
 //    todo LocalDate
     private int printYear;
-//    todo also create field count
     private boolean isTaken;
+    private short numberOfBooks;
 
-    public Book(String author, String name, int printYear) {
+    public Book(Author author, String bookName, int printYear, boolean isTaken, short numberOfBooks) {
         this.author = author;
-        this.name = name;
+        this.bookName = bookName;
         this.printYear = printYear;
+        this.isTaken = isTaken;
+        this.numberOfBooks = numberOfBooks;
     }
 
-    public boolean getTaken() {
+    public boolean isTaken() {
         return isTaken;
     }
 
-    public void setTaken(boolean taken) {
-        this.isTaken = taken;
+    public void setTaken(boolean isTaken) {
+        this.isTaken = isTaken;
     }
 
-    public String getAuthor() {
-        return author;
+    public short getNumberOfBooks() {
+        return numberOfBooks;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setNumberOfBooks(short numberOfBooks) {
+        this.numberOfBooks = numberOfBooks;
     }
 
     public int getPrintYear() {
@@ -50,8 +43,23 @@ public class Book implements Comparable<Book>{
         this.printYear = printYear;
     }
 
+    public Author getAuthor() {
+        return author;
+    }
 
-//todo equals
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
+
+    public String getBookName() {
+        return bookName;
+    }
+
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
+    }
+
+    //todo equals
 
     public boolean equals(Object o){
 // ckeck reference
@@ -66,7 +74,7 @@ public class Book implements Comparable<Book>{
     public String toString() {
         return "Book{" +
                 "author='" + author + '\'' +
-                ", name='" + name + '\'' +
+                ", bookName='" + bookName + '\'' +
                 ", printYear=" + printYear +
                 ", statusBoock=" + isTaken +
                 '}';
@@ -74,6 +82,6 @@ public class Book implements Comparable<Book>{
 
     @Override
     public int compareTo(Book o) {
-        return name.compareTo(o.name);
+        return bookName.compareTo(o.bookName);
     }
 }

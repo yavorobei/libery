@@ -72,7 +72,7 @@ public class Library {
             System.out.println(reader + "==> this user in black list");
             return false;
         }
-        if (reader.getCountBook() < 3 && !book.getTaken()) {
+        if (reader.getCountBook() < 3 && !book.isTaken()) {
             reader.setCountBook(++count);
             reader.readerBooks.add(book);
             book.setTaken(true);
@@ -86,8 +86,6 @@ public class Library {
     }
 
     public void showListOfReaders() {
-        //        todo wark with inner array
-
         System.out.println("\n|List readers:");
         System.out.println("--------------");
         for (Reader item : readers) {
@@ -96,7 +94,6 @@ public class Library {
     }
 
     public void showListOfBooks() {
-//        todo wark with inner array
         System.out.println("\n|List books:");
         System.out.println("-----------");
         Collections.sort(books, new CompByYear());
@@ -118,9 +115,7 @@ public class Library {
     }
 
     //поиск книг одного года выпуска
-    public void findBookOfOneYear(ArrayList<Book> books, int year) {
-        //        todo wark with inner array
-
+    public void findBookOfOneYear(int year) {
         System.out.println("\n|Books of the one year:");
         System.out.println("-----------------------");
         for (Book item : books) {
@@ -130,9 +125,7 @@ public class Library {
         }
     }
 
-    public void findBookSingleAuthor(ArrayList<Book> books, String author) {
-        //        todo wark with inner array
-
+    public void findBookSingleAuthor(String author) {
         System.out.println("\n|Books single author:");
         System.out.println("---------------------");
         for (Book item : books) {
@@ -142,13 +135,11 @@ public class Library {
         }
     }
 
-    public void showBusyBook(ArrayList<Book> books) {
-        //        todo wark with inner array
-
+    public void showBusyBook() {
         System.out.println("\n|List busy books:");
         System.out.println("-----------------");
         for (Book item : books) {
-            if (item.getTaken() == true) {
+            if (item.isTaken() == true) {
                 System.out.println(item);
             }
         }
